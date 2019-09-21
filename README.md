@@ -1,4 +1,4 @@
-# consistent_hashing
+# consistent-hashing
 A Consistent Hashing with Bounded Loads Implementation
 
 
