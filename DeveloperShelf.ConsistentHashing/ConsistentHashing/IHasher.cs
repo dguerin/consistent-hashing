@@ -10,6 +10,6 @@
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        string ComputeHash(string value);
+        int ComputeHash(string value);
     }
 }
