@@ -1,7 +1,7 @@
 using System.Linq;
 using Xunit;
 
-namespace ConsistentHashing.Tests
+namespace DeveloperShelf.ConsistentHashing.Tests
 {
     public class ConsistentHashingTests
     {
@@ -9,7 +9,7 @@ namespace ConsistentHashing.Tests
 
         public ConsistentHashingTests()
         {
-            var hasher = new Hasher();
+            var hasher = new Sha256Hasher();
             _consistentHasher = new ConsistentHashing(hasher);
         }
 

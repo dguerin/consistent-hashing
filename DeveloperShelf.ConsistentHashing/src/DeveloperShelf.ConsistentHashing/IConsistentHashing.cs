@@ -1,4 +1,4 @@
-﻿namespace ConsistentHashing
+﻿namespace DeveloperShelf.ConsistentHashing
 {
     public interface IConsistentHashing
     {

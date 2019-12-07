@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ConsistentHashing
+namespace DeveloperShelf.ConsistentHashing
 {
     public static class StringExtensions
     {

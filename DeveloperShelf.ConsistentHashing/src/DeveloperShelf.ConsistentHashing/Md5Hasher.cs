@@ -2,16 +2,15 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace ConsistentHashing
+namespace DeveloperShelf.ConsistentHashing
 {
-    public class Hasher : IHasher
+    public class Md5Hasher : IHasher
     {
         public int ComputeHash(string value)
         {
-            using (var sha256Hash = SHA256.Create())
+            using(var md5Hash = MD5.Create())
             {
-                var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(value.ToLowerInvariant()));
-
+                var bytes = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(value.ToLowerInvariant()));
                 return Math.Abs(BitConverter.ToInt32(bytes, 0));
             }
         }

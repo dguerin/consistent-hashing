@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ConsistentHashing
+namespace DeveloperShelf.ConsistentHashing
 {
     public class Node
     {
@@ -8,7 +8,7 @@ namespace ConsistentHashing
         {
             key.CheckIsNullEmptyOrWhitespace();
 
-            var hasher = new Hasher();
+            var hasher = new Sha256Hasher();
             Id = hasher.ComputeHash(key);
             Key = key;
 

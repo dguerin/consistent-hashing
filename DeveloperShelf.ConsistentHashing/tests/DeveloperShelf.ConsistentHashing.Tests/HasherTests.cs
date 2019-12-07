@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace ConsistentHashing.Tests
+namespace DeveloperShelf.ConsistentHashing.Tests
 {
     public class HasherTests
     {
@@ -11,7 +11,7 @@ namespace ConsistentHashing.Tests
         [InlineData("")]
         public void IsNotEmpty(string key)
         {
-            var hasher = new Hasher();
+            var hasher = new Sha256Hasher();
             var value = hasher.ComputeHash(key);
             Assert.NotEqual(default, value);
         }
@@ -40,7 +40,7 @@ namespace ConsistentHashing.Tests
         [InlineData("Hello World", false)]
         public void Evaluate(string value, bool expectation)
         {
-
+            value.CheckIsNullEmptyOrWhitespace();
         }
     }
 }

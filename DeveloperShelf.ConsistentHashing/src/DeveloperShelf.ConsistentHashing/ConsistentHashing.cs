@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ConsistentHashing
+namespace DeveloperShelf.ConsistentHashing
 {
     public class ConsistentHashing : IConsistentHashing
     {

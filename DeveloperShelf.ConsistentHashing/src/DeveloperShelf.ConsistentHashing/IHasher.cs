@@ -1,4 +1,4 @@
-﻿namespace ConsistentHashing
+﻿namespace DeveloperShelf.ConsistentHashing
 {
     /// <summary>
     /// Wrapper around the hashing algorithm (SHA256) which is used in this lib
