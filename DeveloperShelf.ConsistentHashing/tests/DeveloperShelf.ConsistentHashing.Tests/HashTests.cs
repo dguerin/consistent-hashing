@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 
 namespace DeveloperShelf.ConsistentHashing.Tests
@@ -34,13 +35,19 @@ namespace DeveloperShelf.ConsistentHashing.Tests
     public class StringExtensionTests
     {
         [Theory]
-        [InlineData("")]
         [InlineData("donkey")]
-        [InlineData(null)]
         [InlineData("Hello World")]
-        public void Evaluate(string value)
+        public void Check_Valid_String(string value)
         {
             value.CheckIsNullEmptyOrWhitespace();
+        }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData(null)]
+        public void Throw_Exception_On_Invalid_String(string value)
+        {
+            Assert.Throws<ArgumentNullException>(value.CheckIsNullEmptyOrWhitespace);
         }
     }
 }
