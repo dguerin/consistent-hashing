@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DeveloperShelf.ConsistentHashing
 {
-    public class Sha256Hasher : IHasher
+    public class Sha256Hash : IHash
     {
         public int ComputeHash(string value)
         {

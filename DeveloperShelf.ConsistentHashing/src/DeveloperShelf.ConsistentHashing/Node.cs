@@ -4,13 +4,13 @@ namespace DeveloperShelf.ConsistentHashing
 {
     public class Node
     {
-        public Node(string key)
+        public Node(string name)
         {
-            key.CheckIsNullEmptyOrWhitespace();
+            name.CheckIsNullEmptyOrWhitespace();
 
-            var hasher = new Sha256Hasher();
-            Id = hasher.ComputeHash(key);
-            Key = key;
+            var hasher = new Sha256Hash();
+            Id = hasher.ComputeHash(name);
+            Name = name;
 
             Entries = new List<Entry>(100);
         }
@@ -23,18 +23,13 @@ namespace DeveloperShelf.ConsistentHashing
         /// <summary>
         /// The key used to seed this node
         /// </summary>
-        public string Key { get; }
+        public string Name { get; }
 
         public List<Entry> Entries { get; }
 
         public void Add(Entry entry)
         {
             Entries.Add(entry);
-        }
-
-        public void Remove(Entry entry)
-        {
-            Entries.Remove(entry);
         }
     }
 }

@@ -2,7 +2,7 @@ using Xunit;
 
 namespace DeveloperShelf.ConsistentHashing.Tests
 {
-    public class HasherTests
+    public class HashTests
     {
         [Theory]
         [InlineData("dog")]
@@ -11,7 +11,7 @@ namespace DeveloperShelf.ConsistentHashing.Tests
         [InlineData("")]
         public void IsNotEmpty(string key)
         {
-            var hasher = new Sha256Hasher();
+            var hasher = new Sha256Hash();
             var value = hasher.ComputeHash(key);
             Assert.NotEqual(default, value);
         }
@@ -26,7 +26,7 @@ namespace DeveloperShelf.ConsistentHashing.Tests
         {
             var node = new Node(key);
 
-            Assert.NotNull(node.Key);
+            Assert.NotNull(node.Name);
             Assert.Equal(expectedId, node.Id);
         }
     }
@@ -34,11 +34,11 @@ namespace DeveloperShelf.ConsistentHashing.Tests
     public class StringExtensionTests
     {
         [Theory]
-        [InlineData("", false)]
-        [InlineData("donkey", true)]
-        [InlineData(null, false)]
-        [InlineData("Hello World", false)]
-        public void Evaluate(string value, bool expectation)
+        [InlineData("")]
+        [InlineData("donkey")]
+        [InlineData(null)]
+        [InlineData("Hello World")]
+        public void Evaluate(string value)
         {
             value.CheckIsNullEmptyOrWhitespace();
         }
